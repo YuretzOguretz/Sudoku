@@ -46,8 +46,6 @@ public class WinnerScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\yungu3633\\Pictures\\maxresdefaultfddfd.jpg")); // NOI18N
-
         javax.swing.GroupLayout WinPanelLayout = new javax.swing.GroupLayout(WinPanel);
         WinPanel.setLayout(WinPanelLayout);
         WinPanelLayout.setHorizontalGroup(

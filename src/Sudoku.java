@@ -8,7 +8,7 @@
  *
  * @author yungu3633
  */
-
+import NumberSelector.java;
 
 public class Sudoku extends javax.swing.JFrame {
 
@@ -1495,7 +1495,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
         
         int [][] gridCorrect = new int[8][8];
-        gridCorrect[0][0]= 10;
+        gridCorrect[0][0]= NumberSelector(1,1);
         
     }
 
