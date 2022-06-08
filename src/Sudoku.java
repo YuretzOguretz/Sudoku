@@ -8,7 +8,7 @@
  *
  * @author yungu3633
  */
-import NumberSelector.java;
+
 
 public class Sudoku extends javax.swing.JFrame {
 
@@ -133,7 +133,6 @@ public class Sudoku extends javax.swing.JFrame {
         MainLableS2.setText("Sudoku Master");
 
         jTextField1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField1.setText("9");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -141,7 +140,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField2.setText("9");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -149,7 +147,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField3.setText("9");
+        jTextField3.setText(" ");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -157,7 +155,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField4.setText("9");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -165,7 +162,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField5.setText("9");
+        jTextField5.setText(" ");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
@@ -173,7 +170,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField6.setText("9");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -181,7 +177,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField7.setText("9");
+        jTextField7.setText(" ");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -189,7 +185,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField8.setText("9");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
@@ -197,7 +192,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField9.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField9.setText("9");
+        jTextField9.setText(" ");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
@@ -205,7 +200,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField10.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField10.setText("9");
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
@@ -213,7 +207,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField11.setText("9");
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField11ActionPerformed(evt);
@@ -221,7 +214,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField12.setText("9");
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField12ActionPerformed(evt);
@@ -229,7 +221,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField13.setText("9");
+        jTextField13.setText(" ");
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField13ActionPerformed(evt);
@@ -237,7 +229,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField14.setText("9");
+        jTextField14.setText(" ");
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField14ActionPerformed(evt);
@@ -245,7 +237,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField15.setText("9");
+        jTextField15.setText(" ");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField15ActionPerformed(evt);
@@ -253,7 +245,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField16.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField16.setText("9");
+        jTextField16.setText(" ");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField16ActionPerformed(evt);
@@ -261,7 +253,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField17.setText("9");
+        jTextField17.setText(" ");
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField17ActionPerformed(evt);
@@ -269,7 +261,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField18.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField18.setText("9");
+        jTextField18.setText(" ");
         jTextField18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField18ActionPerformed(evt);
@@ -277,7 +269,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField19.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField19.setText("9");
         jTextField19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField19ActionPerformed(evt);
@@ -285,7 +276,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField20.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField20.setText("9");
         jTextField20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField20ActionPerformed(evt);
@@ -293,7 +283,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField21.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField21.setText("9");
         jTextField21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField21ActionPerformed(evt);
@@ -301,7 +290,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField22.setText("9");
+        jTextField22.setText(" ");
         jTextField22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField22ActionPerformed(evt);
@@ -309,7 +298,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField23.setText("9");
+        jTextField23.setText(" ");
         jTextField23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField23ActionPerformed(evt);
@@ -317,7 +306,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField24.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField24.setText("9");
+        jTextField24.setText(" ");
         jTextField24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField24ActionPerformed(evt);
@@ -325,7 +314,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField25.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField25.setText("9");
+        jTextField25.setText(" ");
         jTextField25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField25ActionPerformed(evt);
@@ -333,7 +322,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField26.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField26.setText("9");
+        jTextField26.setText(" ");
         jTextField26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField26ActionPerformed(evt);
@@ -341,7 +330,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField27.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField27.setText("9");
+        jTextField27.setText(" ");
         jTextField27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField27ActionPerformed(evt);
@@ -349,7 +338,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField29.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField29.setText("9");
+        jTextField29.setText(" ");
         jTextField29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField29ActionPerformed(evt);
@@ -357,7 +346,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField30.setText("9");
+        jTextField30.setText(" ");
         jTextField30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField30ActionPerformed(evt);
@@ -365,7 +354,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField31.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField31.setText("9");
+        jTextField31.setText(" ");
         jTextField31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField31ActionPerformed(evt);
@@ -373,7 +362,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField32.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField32.setText("9");
+        jTextField32.setText(" ");
         jTextField32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField32ActionPerformed(evt);
@@ -381,7 +370,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField33.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField33.setText("9");
+        jTextField33.setText(" ");
         jTextField33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField33ActionPerformed(evt);
@@ -389,7 +378,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField34.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField34.setText("9");
+        jTextField34.setText(" ");
         jTextField34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField34ActionPerformed(evt);
@@ -397,7 +386,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField35.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField35.setText("9");
+        jTextField35.setText(" ");
         jTextField35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField35ActionPerformed(evt);
@@ -405,7 +394,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField36.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField36.setText("9");
+        jTextField36.setText(" ");
         jTextField36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField36ActionPerformed(evt);
@@ -413,7 +402,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField37.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField37.setText("9");
+        jTextField37.setText(" ");
         jTextField37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField37ActionPerformed(evt);
@@ -421,7 +410,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField38.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField38.setText("9");
         jTextField38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField38ActionPerformed(evt);
@@ -429,7 +417,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField39.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField39.setText("9");
         jTextField39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField39ActionPerformed(evt);
@@ -437,7 +424,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField40.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField40.setText("9");
         jTextField40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField40ActionPerformed(evt);
@@ -445,7 +431,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField41.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField41.setText("9");
         jTextField41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField41ActionPerformed(evt);
@@ -453,7 +438,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField42.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField42.setText("9");
         jTextField42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField42ActionPerformed(evt);
@@ -461,7 +445,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField43.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField43.setText("9");
         jTextField43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField43ActionPerformed(evt);
@@ -469,7 +452,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField44.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField44.setText("9");
         jTextField44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField44ActionPerformed(evt);
@@ -477,7 +459,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField45.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField45.setText("9");
         jTextField45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField45ActionPerformed(evt);
@@ -485,7 +466,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField46.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField46.setText("9");
+        jTextField46.setText(" ");
         jTextField46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField46ActionPerformed(evt);
@@ -493,7 +474,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField47.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField47.setText("9");
         jTextField47.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField47ActionPerformed(evt);
@@ -501,7 +481,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField48.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField48.setText("9");
         jTextField48.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField48ActionPerformed(evt);
@@ -509,7 +488,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField49.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField49.setText("9");
         jTextField49.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField49ActionPerformed(evt);
@@ -517,7 +495,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField50.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField50.setText("9");
         jTextField50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField50ActionPerformed(evt);
@@ -525,7 +502,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField51.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField51.setText("9");
         jTextField51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField51ActionPerformed(evt);
@@ -533,7 +509,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField52.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField52.setText("9");
         jTextField52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField52ActionPerformed(evt);
@@ -541,7 +516,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField53.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField53.setText("9");
         jTextField53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField53ActionPerformed(evt);
@@ -549,7 +523,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField54.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField54.setText("9");
         jTextField54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField54ActionPerformed(evt);
@@ -557,7 +530,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField55.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField55.setText("9");
         jTextField55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField55ActionPerformed(evt);
@@ -565,7 +537,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField56.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField56.setText("9");
         jTextField56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField56ActionPerformed(evt);
@@ -573,7 +544,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField57.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField57.setText("9");
         jTextField57.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField57ActionPerformed(evt);
@@ -581,7 +551,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField58.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField58.setText("9");
         jTextField58.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField58ActionPerformed(evt);
@@ -589,7 +558,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField59.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField59.setText("9");
         jTextField59.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField59ActionPerformed(evt);
@@ -597,7 +565,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField60.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField60.setText("9");
         jTextField60.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField60ActionPerformed(evt);
@@ -605,7 +572,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField61.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField61.setText("9");
         jTextField61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField61ActionPerformed(evt);
@@ -613,7 +579,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField62.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField62.setText("9");
         jTextField62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField62ActionPerformed(evt);
@@ -621,7 +586,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField63.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField63.setText("9");
         jTextField63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField63ActionPerformed(evt);
@@ -629,7 +593,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField64.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField64.setText("9");
         jTextField64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField64ActionPerformed(evt);
@@ -637,7 +600,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField65.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField65.setText("9");
         jTextField65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField65ActionPerformed(evt);
@@ -645,7 +607,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField66.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField66.setText("9");
         jTextField66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField66ActionPerformed(evt);
@@ -653,7 +614,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField67.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField67.setText("9");
         jTextField67.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField67ActionPerformed(evt);
@@ -661,7 +621,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField68.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField68.setText("9");
         jTextField68.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField68ActionPerformed(evt);
@@ -669,7 +628,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField69.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField69.setText("9");
         jTextField69.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField69ActionPerformed(evt);
@@ -677,7 +635,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField70.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField70.setText("9");
         jTextField70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField70ActionPerformed(evt);
@@ -685,7 +642,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField71.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField71.setText("9");
         jTextField71.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField71ActionPerformed(evt);
@@ -693,7 +649,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField72.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField72.setText("9");
         jTextField72.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField72ActionPerformed(evt);
@@ -701,7 +656,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField73.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField73.setText("9");
         jTextField73.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField73ActionPerformed(evt);
@@ -709,7 +663,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField74.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField74.setText("9");
         jTextField74.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField74ActionPerformed(evt);
@@ -717,7 +670,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField75.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField75.setText("9");
         jTextField75.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField75ActionPerformed(evt);
@@ -725,7 +677,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField76.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField76.setText("9");
         jTextField76.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField76ActionPerformed(evt);
@@ -733,7 +684,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField77.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField77.setText("9");
         jTextField77.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField77ActionPerformed(evt);
@@ -741,7 +691,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField78.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField78.setText("9");
         jTextField78.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField78ActionPerformed(evt);
@@ -749,7 +698,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField79.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField79.setText("9");
         jTextField79.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField79ActionPerformed(evt);
@@ -757,7 +705,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField80.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField80.setText("9");
         jTextField80.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField80ActionPerformed(evt);
@@ -765,7 +712,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField82.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField82.setText("9");
         jTextField82.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField82ActionPerformed(evt);
@@ -773,7 +719,6 @@ public class Sudoku extends javax.swing.JFrame {
         });
 
         jTextField83.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField83.setText("9");
         jTextField83.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField83ActionPerformed(evt);
@@ -1495,7 +1440,7 @@ public class Sudoku extends javax.swing.JFrame {
         });
         
         int [][] gridCorrect = new int[8][8];
-        gridCorrect[0][0]= NumberSelector(1,1);
+        gridCorrect[0][0]= 10;
         
     }
 
