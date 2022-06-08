@@ -41,9 +41,11 @@ public class NumberSelector {
     
     public int NumberSelector(int rowX, int rowY){
 //        num = (int)(Math.random()*8)+0; (Choosing random string)
+        int i;
         if ((rowX>= 1&&rowX<= 3)&&((rowY>= 1&&rowY<= 3))){
           //Box #1
-          int i =(int)(Math.random()*box1.length()-1)+0;
+          
+          i=(int)(Math.random()*(box1.length()-1))+0;
           num = Integer.valueOf(box1.substring( i, i+1));
           for (int f =0; f<box1.length()-1; f++){
               if (!(box1.substring( i, i+1).equals(box1.substring( f, f+1)))){
@@ -76,7 +78,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 1&&rowX<= 3)&&((rowY>= 4&&rowY<= 6))){
           //Box #2 
-          int i =(int)(Math.random()*box2.length()-1)+0;
+          i=(int)(Math.random()*(box2.length()-1))+0;
           num = Integer.valueOf(box2.substring( i, i+1));
           for (int f =0; f<box2.length()-1; f++){
               if (!(box2.substring( i, i+1).equals(box2.substring( f, f+1)))){
@@ -109,7 +111,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 1&&rowX<= 3)&&((rowY>= 7&&rowY<= 9))){
           //Box #3
-          int i =(int)(Math.random()*box3.length()-1)+0;
+          i=(int)(Math.random()*(box3.length()-1))+0;
           num = Integer.valueOf(box3.substring( i, i+1));
           for (int f =0; f<box3.length()-1; f++){
               if (!(box3.substring( i, i+1).equals(box3.substring( f, f+1)))){
@@ -142,7 +144,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 1&&rowY<= 3))){
           //Box #4
-          int i =(int)(Math.random()*box4.length()-1)+0;
+          i=(int)(Math.random()*(box4.length()-1))+0;
           num = Integer.valueOf(box4.substring( i, i+1));
           for (int f =0; f<box4.length()-1; f++){
               if (!(box4.substring( i, i+1).equals(box4.substring( f, f+1)))){
@@ -175,7 +177,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 4&&rowY<= 6))){
           //Box #5
-          int i =(int)(Math.random()*box5.length()-1)+0;
+          i=(int)(Math.random()*(box5.length()-1))+0;
           num = Integer.valueOf(box5.substring( i, i+1));
           for (int f =0; f<box5.length()-1; f++){
               if (!(box5.substring( i, i+1).equals(box5.substring( f, f+1)))){
@@ -208,7 +210,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 7&&rowY<= 9))){
           //Box #6 
-          int i =(int)(Math.random()*box6.length()-1)+0;
+          i=(int)(Math.random()*(box6.length()-1))+0;
           num = Integer.valueOf(box6.substring( i, i+1));
           for (int f =0; f<box6.length()-1; f++){
               if (!(box6.substring( i, i+1).equals(box6.substring( f, f+1)))){
@@ -241,7 +243,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 1&&rowY<= 3))){
           //Box #7 
-          int i =(int)(Math.random()*box7.length()-1)+0;
+          i=(int)(Math.random()*(box7.length()-1))+0;
           num = Integer.valueOf(box7.substring( i, i+1));
           for (int f =0; f<box7.length()-1; f++){
               if (!(box7.substring( i, i+1).equals(box7.substring( f, f+1)))){
@@ -274,7 +276,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 4&&rowY<= 6))){
           //Box #8 
-          int i =(int)(Math.random()*box8.length()-1)+0;
+          i=(int)(Math.random()*(box8.length()-1))+0;
           num = Integer.valueOf(box8.substring( i, i+1));
           for (int f =0; f<box8.length()-1; f++){
               if (!(box8.substring( i, i+1).equals(box8.substring( f, f+1)))){
@@ -307,7 +309,7 @@ public class NumberSelector {
         }
         else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 7&&rowY<= 9))){
           //Box #9 
-          int i =(int)(Math.random()*box9.length()-1)+0;
+          i=(int)(Math.random()*(box9.length()-1))+0;
           num = Integer.valueOf(box9.substring( i, i+1));
           for (int f =0; f<box9.length()-1; f++){
               if (!(box9.substring( i, i+1).equals(box9.substring( f, f+1)))){

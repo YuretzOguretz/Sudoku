@@ -132,6 +132,7 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
     private void DifficultyDropBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DifficultyDropBoxActionPerformed
         if ((DifficultyDropBox.getSelectedItem()).equals("Easy")){
            NoteLable.setText("                                      Click start to begin ");
+           NoteLable2.setText(" ");
         }
         else {
            NoteLable.setText("            This may be too hard for you... That's the reason,");

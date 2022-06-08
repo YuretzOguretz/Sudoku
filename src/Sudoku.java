@@ -17,6 +17,16 @@ public class Sudoku extends javax.swing.JFrame {
      */
     public Sudoku() {
         initComponents();
+        NumberSelector p1 = new NumberSelector();
+        int [][] gridCorrect = new int[8][8];
+        gridCorrect[0][0]= p1.NumberSelector(1,1);
+        gridCorrect[0][1]= p1.NumberSelector(1,2);
+        gridCorrect[0][1]= p1.NumberSelector(1,2);
+        gridCorrect[0][1]= p1.NumberSelector(1,2);
+        gridCorrect[0][1]= p1.NumberSelector(1,2);
+        gridCorrect[0][1]= p1.NumberSelector(1,2);
+        System.out.println(gridCorrect[0][0]);
+        System.out.println(gridCorrect[0][1]);
     }
 
     /**
@@ -1394,7 +1404,7 @@ public class Sudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField83ActionPerformed
 
     private void CheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckButtonActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_CheckButtonActionPerformed
 
     private void QuitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitButtonActionPerformed
@@ -1439,8 +1449,6 @@ public class Sudoku extends javax.swing.JFrame {
             }
         });
         
-        int [][] gridCorrect = new int[8][8];
-        gridCorrect[0][0]= 10;
         
     }
 
