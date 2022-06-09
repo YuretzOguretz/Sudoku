@@ -9,7 +9,7 @@
  * @author yungu3633
  */
 public class NumberSelector {
-    private int num;
+    private String num;
     private static String temp1 = "";
     private static String row1 = "123456789";
     private static String row2 = "123456789";
@@ -39,314 +39,39 @@ public class NumberSelector {
     private static String line8 = "123456789";
     private static String line9 = "123456789";
     
-    public int NumberSelector(int rowX, int rowY){
+    public String NumberSelector(int rowX, int rowY){
 //        num = (int)(Math.random()*8)+0; (Choosing random string)
-        int i;
-        if ((rowX>= 1&&rowX<= 3)&&((rowY>= 1&&rowY<= 3))){
-          //Box #1
-          
-          i=(int)(Math.random()*(box1.length()-1));
-         
-
-          num = Integer.parseInt(box1.substring( i, i+1));
-          for (int f =0; f<box1.length(); f++){
-              if (!(box1.substring( i, i+1).equals(box1.substring( f, f+1)))){
-                   temp1+=box1.substring( f, f+1);
-              }
-          }
-          box1 = temp1;
-            
-          if (rowX == 1){
-              row1 = temp1;
-          }
-          else if (rowX == 2){
-              row2 = temp1;
-          }
-          else if (rowX == 3){
-              row3 = temp1;
-          }
-          
-          if (rowY == 1){
-              line1 = temp1;
-          }
-          else if (rowY == 2){
-              line2 = temp1;
-          }
-          else if (rowY == 3){
-              line3 = temp1;
-          }
-          temp1="";
-          return num;
+        boolean found = false;
+        if (rowX==1&&rowY==1){
+        num = ""+RandomNumber(row1);
+        while(found==false){
+            if ((row1.contains(num) && box1.contains(num) && line1.contains(num))){
+               RemoveNum(row1,num);
+               RemoveNum(box1,num);
+               RemoveNum(line1,num);
+               found = true;
+            }
+            else{
+               num = ""+RandomNumber(row1);
+            }
         }
-        else if ((rowX>= 1&&rowX<= 3)&&((rowY>= 4&&rowY<= 6))){
-          //Box #2 
-          i=(int)(Math.random()*(box2.length()-1))+0;
-          num = Integer.parseInt(box2.substring( i, i+1));
-          for (int f =0; f<box2.length(); f++){
-              if (!(box2.substring( i, i+1).equals(box2.substring( f, f+1)))){
-                  temp1+=box2.substring( f, f+1); 
-              }
-          }
-          box2 = temp1;
-          
-          if (rowX == 1){
-              row1 = temp1;
-          }
-          else if (rowX == 2){
-              row2 = temp1;
-          }
-          else if (rowX == 3){
-              row3 = temp1;
-          }
-          
-          if (rowY == 4){
-              line4 = temp1;
-          }
-          else if (rowY == 5){
-              line5 = temp1;
-          }
-          else if (rowY == 6){
-              line6 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 1&&rowX<= 3)&&((rowY>= 7&&rowY<= 9))){
-          //Box #3
-          i=(int)(Math.random()*(box3.length()-1))+0;
-          num = Integer.parseInt(box3.substring( i, i+1));
-          for (int f =0; f<box3.length(); f++){
-              if (!(box3.substring( i, i+1).equals(box3.substring( f, f+1)))){
-                  temp1+=box3.substring( f, f+1); 
-              }
-          }
-          box3 = temp1;
-          
-          if (rowX == 1){
-              row1 = temp1;
-          }
-          else if (rowX == 2){
-              row2 = temp1;
-          }
-          else if (rowX == 3){
-              row3 = temp1;
-          }
-          
-          if (rowY == 7){
-              line7 = temp1;
-          }
-          else if (rowY == 8){
-              line8 = temp1;
-          }
-          else if (rowY == 9){
-              line9 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 1&&rowY<= 3))){
-          //Box #4
-          i=(int)(Math.random()*(box4.length()-1))+0;
-          num = Integer.parseInt(box4.substring( i, i+1));
-          for (int f =0; f<box4.length(); f++){
-              if (!(box4.substring( i, i+1).equals(box4.substring( f, f+1)))){
-                  temp1+=box4.substring( f, f+1); 
-              }
-          }
-          box4 = temp1;
-          
-          if (rowX == 4){
-              row4 = temp1;
-          }
-          else if (rowX == 5){
-              row5 = temp1;
-          }
-          else if (rowX == 6){
-              row6 = temp1;
-          }
-          
-          if (rowY == 1){
-              line1 = temp1;
-          }
-          else if (rowY == 2){
-              line2 = temp1;
-          }
-          else if (rowY == 3){
-              line3 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 4&&rowY<= 6))){
-          //Box #5
-          i=(int)(Math.random()*(box5.length()-1))+0;
-          num = Integer.parseInt(box5.substring( i, i+1));
-          for (int f =0; f<box5.length(); f++){
-              if (!(box5.substring( i, i+1).equals(box5.substring( f, f+1)))){
-                  temp1+=box5.substring( f, f+1); 
-              }
-          }
-          box5 = temp1;
-          
-          if (rowX == 4){
-              row4 = temp1;
-          }
-          else if (rowX == 5){
-              row5 = temp1;
-          }
-          else if (rowX == 6){
-              row6 = temp1;
-          }
-          
-          if (rowY == 4){
-              line4 = temp1;
-          }
-          else if (rowY == 5){
-              line5 = temp1;
-          }
-          else if (rowY == 6){
-              line6 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 7&&rowY<= 9))){
-          //Box #6 
-          i=(int)(Math.random()*(box6.length()-1))+0;
-          num = Integer.parseInt(box6.substring( i, i+1));
-          for (int f =0; f<box6.length(); f++){
-              if (!(box6.substring( i, i+1).equals(box6.substring( f, f+1)))){
-                  temp1+=box6.substring( f, f+1); 
-              }
-          }
-          box6 = temp1;
-          
-          if (rowX == 4){
-              row4 = temp1;
-          }
-          else if (rowX == 5){
-              row5 = temp1;
-          }
-          else if (rowX == 6){
-              row6 = temp1;
-          }
-          
-          if (rowY == 7){
-              line7 = temp1;
-          }
-          else if (rowY == 8){
-              line8 = temp1;
-          }
-          else if (rowY == 9){
-              line9 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 1&&rowY<= 3))){
-          //Box #7 
-          i=(int)(Math.random()*(box7.length()-1))+0;
-          num = Integer.parseInt(box7.substring( i, i+1));
-          for (int f =0; f<box7.length(); f++){
-              if (!(box7.substring( i, i+1).equals(box7.substring( f, f+1)))){
-                  temp1+=box7.substring( f, f+1); 
-              }
-          }
-          box7 = temp1;
-          
-          if (rowX == 7){
-              row7 = temp1;
-          }
-          else if (rowX == 8){
-              row8 = temp1;
-          }
-          else if (rowX == 9){
-              row9 = temp1;
-          }
-          
-          if (rowY == 1){
-              line1 = temp1;
-          }
-          else if (rowY == 2){
-              line2 = temp1;
-          }
-          else if (rowY == 3){
-              line3 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 4&&rowY<= 6))){
-          //Box #8 
-          i=(int)(Math.random()*(box8.length()-1))+0;
-          num = Integer.parseInt(box8.substring( i, i+1));
-          for (int f =0; f<box8.length(); f++){
-              if (!(box8.substring( i, i+1).equals(box8.substring( f, f+1)))){
-                  temp1+=box8.substring( f, f+1); 
-              }
-          }
-          box8 = temp1;
-          
-          if (rowX == 7){
-              row7 = temp1;
-          }
-          else if (rowX == 8){
-              row8 = temp1;
-          }
-          else if (rowX == 9){
-              row9 = temp1;
-          }
-          
-          if (rowY == 4){
-              line4 = temp1;
-          }
-          else if (rowY == 5){
-              line5 = temp1;
-          }
-          else if (rowY == 6){
-              line6 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 7&&rowY<= 9))){
-          //Box #9 
-          i=(int)(Math.random()*(box9.length()-1))+0;
-          num = Integer.parseInt(box9.substring( i, i+1));
-          for (int f =0; f<box9.length(); f++){
-              if (!(box9.substring( i, i+1).equals(box9.substring( f, f+1)))){
-                  temp1+=box9.substring( f, f+1); 
-              }
-          }
-          box9 = temp1;
-          
-          if (rowX == 7){
-              row7 = temp1;
-          }
-          else if (rowX == 8){
-              row8 = temp1;
-          }
-          else if (rowX == 9){
-              row9 = temp1;
-          }
-          
-          if (rowY == 7){
-              line7 = temp1;
-          }
-          else if (rowY == 8){
-              line8 = temp1;
-          }
-          else if (rowY == 9){
-              line9 = temp1;
-          }
-          temp1="";
-          return num;
-        }
-        else {
-            num = 0;
         }
         return num;
     } 
+    
+    public int RandomNumber(String n){
+       int i = (int) (Math.random()*n.length()-1)+0;
+       return i;
+    }
+    
+    public void RemoveNum(String box, String num){
+        for (int f =0; f<box.length(); f++){
+              if (!(box.substring( f, f+1).equals(num))){
+                   temp1+=box.substring( f, f+1);
+              }
+          }
+        box=temp1;
+    }
     
     public static void Reset(){
     row1 = "123456789";

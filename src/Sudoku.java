@@ -20,15 +20,15 @@ public class Sudoku extends javax.swing.JFrame {
         NumberSelector p1 = new NumberSelector();
         int [][] gridCorrect = new int[9][9];
        
-    // let's loop through array to print each row and column 
-        for (int row = 0; row < gridCorrect.length; row++) { 
-            for (int col = 0; col < gridCorrect[row].length; col++) {
-                gridCorrect[row][col] = p1.NumberSelector(row+1,col+1); 
-                System.out.print(gridCorrect[row][col] + "\t");
-        } 
-                System.out.println(); 
-
-    }
+//    // let's loop through array to print each row and column 
+//        for (int row = 0; row < gridCorrect.length; row++) { 
+//            for (int col = 0; col < gridCorrect[row].length; col++) {
+//                gridCorrect[row][col] = p1.NumberSelector(row+1,col+1); 
+//                System.out.print(gridCorrect[row][col] + "\t");
+//        } 
+//                System.out.println(); 
+//
+//    }
     }
     /**
      * This method is called from within the constructor to initialize the form.
