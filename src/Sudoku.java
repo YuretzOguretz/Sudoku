@@ -18,17 +18,18 @@ public class Sudoku extends javax.swing.JFrame {
     public Sudoku() {
         initComponents();
         NumberSelector p1 = new NumberSelector();
-        int [][] gridCorrect = new int[8][8];
-        gridCorrect[0][0]= p1.NumberSelector(1,1);
-        gridCorrect[0][1]= p1.NumberSelector(1,2);
-        gridCorrect[0][1]= p1.NumberSelector(1,2);
-        gridCorrect[0][1]= p1.NumberSelector(1,2);
-        gridCorrect[0][1]= p1.NumberSelector(1,2);
-        gridCorrect[0][1]= p1.NumberSelector(1,2);
-        System.out.println(gridCorrect[0][0]);
-        System.out.println(gridCorrect[0][1]);
-    }
+        int [][] gridCorrect = new int[9][9];
+       
+    // let's loop through array to print each row and column 
+        for (int row = 0; row < gridCorrect.length; row++) { 
+            for (int col = 0; col < gridCorrect[row].length; col++) {
+                gridCorrect[row][col] = p1.NumberSelector(row+1,col+1); 
+                System.out.print(gridCorrect[row][col] + "\t");
+        } 
+                System.out.println(); 
 
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

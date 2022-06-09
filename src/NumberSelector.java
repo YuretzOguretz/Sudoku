@@ -10,7 +10,7 @@
  */
 public class NumberSelector {
     private int num;
-    private static String temp1 = null;
+    private static String temp1 = "";
     private static String row1 = "123456789";
     private static String row2 = "123456789";
     private static String row3 = "123456789";
@@ -45,15 +45,17 @@ public class NumberSelector {
         if ((rowX>= 1&&rowX<= 3)&&((rowY>= 1&&rowY<= 3))){
           //Box #1
           
-          i=(int)(Math.random()*(box1.length()-1))+0;
-          num = Integer.valueOf(box1.substring( i, i+1));
-          for (int f =0; f<box1.length()-1; f++){
+          i=(int)(Math.random()*(box1.length()-1));
+         
+
+          num = Integer.parseInt(box1.substring( i, i+1));
+          for (int f =0; f<box1.length(); f++){
               if (!(box1.substring( i, i+1).equals(box1.substring( f, f+1)))){
-                  temp1+=box1.substring( f, f+1); 
+                   temp1+=box1.substring( f, f+1);
               }
           }
           box1 = temp1;
-          
+            
           if (rowX == 1){
               row1 = temp1;
           }
@@ -73,14 +75,14 @@ public class NumberSelector {
           else if (rowY == 3){
               line3 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 1&&rowX<= 3)&&((rowY>= 4&&rowY<= 6))){
           //Box #2 
           i=(int)(Math.random()*(box2.length()-1))+0;
-          num = Integer.valueOf(box2.substring( i, i+1));
-          for (int f =0; f<box2.length()-1; f++){
+          num = Integer.parseInt(box2.substring( i, i+1));
+          for (int f =0; f<box2.length(); f++){
               if (!(box2.substring( i, i+1).equals(box2.substring( f, f+1)))){
                   temp1+=box2.substring( f, f+1); 
               }
@@ -106,14 +108,14 @@ public class NumberSelector {
           else if (rowY == 6){
               line6 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 1&&rowX<= 3)&&((rowY>= 7&&rowY<= 9))){
           //Box #3
           i=(int)(Math.random()*(box3.length()-1))+0;
-          num = Integer.valueOf(box3.substring( i, i+1));
-          for (int f =0; f<box3.length()-1; f++){
+          num = Integer.parseInt(box3.substring( i, i+1));
+          for (int f =0; f<box3.length(); f++){
               if (!(box3.substring( i, i+1).equals(box3.substring( f, f+1)))){
                   temp1+=box3.substring( f, f+1); 
               }
@@ -139,14 +141,14 @@ public class NumberSelector {
           else if (rowY == 9){
               line9 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 1&&rowY<= 3))){
           //Box #4
           i=(int)(Math.random()*(box4.length()-1))+0;
-          num = Integer.valueOf(box4.substring( i, i+1));
-          for (int f =0; f<box4.length()-1; f++){
+          num = Integer.parseInt(box4.substring( i, i+1));
+          for (int f =0; f<box4.length(); f++){
               if (!(box4.substring( i, i+1).equals(box4.substring( f, f+1)))){
                   temp1+=box4.substring( f, f+1); 
               }
@@ -172,14 +174,14 @@ public class NumberSelector {
           else if (rowY == 3){
               line3 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 4&&rowY<= 6))){
           //Box #5
           i=(int)(Math.random()*(box5.length()-1))+0;
-          num = Integer.valueOf(box5.substring( i, i+1));
-          for (int f =0; f<box5.length()-1; f++){
+          num = Integer.parseInt(box5.substring( i, i+1));
+          for (int f =0; f<box5.length(); f++){
               if (!(box5.substring( i, i+1).equals(box5.substring( f, f+1)))){
                   temp1+=box5.substring( f, f+1); 
               }
@@ -205,14 +207,14 @@ public class NumberSelector {
           else if (rowY == 6){
               line6 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 4&&rowX<= 6)&&((rowY>= 7&&rowY<= 9))){
           //Box #6 
           i=(int)(Math.random()*(box6.length()-1))+0;
-          num = Integer.valueOf(box6.substring( i, i+1));
-          for (int f =0; f<box6.length()-1; f++){
+          num = Integer.parseInt(box6.substring( i, i+1));
+          for (int f =0; f<box6.length(); f++){
               if (!(box6.substring( i, i+1).equals(box6.substring( f, f+1)))){
                   temp1+=box6.substring( f, f+1); 
               }
@@ -238,14 +240,14 @@ public class NumberSelector {
           else if (rowY == 9){
               line9 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 1&&rowY<= 3))){
           //Box #7 
           i=(int)(Math.random()*(box7.length()-1))+0;
-          num = Integer.valueOf(box7.substring( i, i+1));
-          for (int f =0; f<box7.length()-1; f++){
+          num = Integer.parseInt(box7.substring( i, i+1));
+          for (int f =0; f<box7.length(); f++){
               if (!(box7.substring( i, i+1).equals(box7.substring( f, f+1)))){
                   temp1+=box7.substring( f, f+1); 
               }
@@ -271,14 +273,14 @@ public class NumberSelector {
           else if (rowY == 3){
               line3 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 4&&rowY<= 6))){
           //Box #8 
           i=(int)(Math.random()*(box8.length()-1))+0;
-          num = Integer.valueOf(box8.substring( i, i+1));
-          for (int f =0; f<box8.length()-1; f++){
+          num = Integer.parseInt(box8.substring( i, i+1));
+          for (int f =0; f<box8.length(); f++){
               if (!(box8.substring( i, i+1).equals(box8.substring( f, f+1)))){
                   temp1+=box8.substring( f, f+1); 
               }
@@ -304,14 +306,14 @@ public class NumberSelector {
           else if (rowY == 6){
               line6 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else if ((rowX>= 7&&rowX<= 9)&&((rowY>= 7&&rowY<= 9))){
           //Box #9 
           i=(int)(Math.random()*(box9.length()-1))+0;
-          num = Integer.valueOf(box9.substring( i, i+1));
-          for (int f =0; f<box9.length()-1; f++){
+          num = Integer.parseInt(box9.substring( i, i+1));
+          for (int f =0; f<box9.length(); f++){
               if (!(box9.substring( i, i+1).equals(box9.substring( f, f+1)))){
                   temp1+=box9.substring( f, f+1); 
               }
@@ -337,7 +339,7 @@ public class NumberSelector {
           else if (rowY == 9){
               line9 = temp1;
           }
-          temp1=null;
+          temp1="";
           return num;
         }
         else {
