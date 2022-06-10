@@ -82,23 +82,24 @@ public class NumberSelector {
     
     public String UsebleRandomnum(int a, int b, int c){
         boolean found = false;
-        
-        num = ""+RandomNumber(row[a]);
+        int substring = RandomNumber(row[a]);
+        num = row[a].substring(substring,substring+1);
         while(found==false){
-            if (row[a].indexOf(num)==-1 && box[c].indexOf(num)==-1 && line[b].indexOf(num)==-1){
-               num = ""+RandomNumber(row[a]);
+            if (row[a].indexOf(num)==-1 || box[c].indexOf(num)==-1 || line[b].indexOf(num)==-1){
+               substring = RandomNumber(row[a]);
+               num = row[a].substring(substring,substring+1);
             }
-            else{
+            else {
                RemoveNumFromRow(row[a],num ,a);
                RemoveNumFromBox(box[c],num,c);
                RemoveNumFromLine(line[b],num, b);
                found = true;
-               
-               
+          
             }
         }
         found = false;
         return num;
+        
     }
     
     public int RandomNumber(String n){
@@ -110,7 +111,7 @@ public class NumberSelector {
         for (int f =0; f<box.length(); f++){
               if (!(box.substring( f, f+1).equals(num1))){
                    temp1+=box.substring( f, f+1);
-                   System.out.println(temp1);
+                   
               }
           }
         box = temp1;
@@ -123,7 +124,7 @@ public class NumberSelector {
         for (int f =0; f<box1.length(); f++){
               if (!(box1.substring( f, f+1).equals(num1))){
                    temp1+=box1.substring( f, f+1);
-                   System.out.println(temp1);
+                   
               }
           }
         box1 = temp1;
@@ -152,7 +153,7 @@ public class NumberSelector {
             row[index] = "123456789";
             box[index] = "123456789";
             line[index] = "123456789";
-            System.out.println(index);
+//            System.out.println(index);
     }
 }
 }
