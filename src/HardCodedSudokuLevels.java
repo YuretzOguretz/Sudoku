@@ -8,7 +8,7 @@
  *
  * @author yungu3633
  */
-public class HardCodedSudokuLevels {
+ public class HardCodedSudokuLevels {
     private int num;
     private static int [][] correctGrid = new int [9][9];
     
@@ -46,15 +46,27 @@ public class HardCodedSudokuLevels {
     int random = RandomGrid();
     
     if (random ==1){
-        Reselection(GridNum1);
+        for (int i = 0; i< 9; i++){
+            for (int k = 0;k< 9; k++){
+            
+            correctGrid[i][k] = GridNum1[i][k];
+        }
+    }
     }
     else if(random == 2) {
-        Reselection(GridNum2);
+        for (int i = 0; i< 9; i++){
+            for (int k = 0;k< 9; k++){
+            correctGrid[i][k] = GridNum2[i][k];
+        }
+    }
     }
     else if(random == 3) {
-        Reselection(GridNum3);
+        for (int i = 0; i< 9; i++){
+            for (int k = 0;k< 9; k++){
+            correctGrid[i][k] = GridNum3[i][k];
+        }
     }
-    
+    }
     return correctGrid;
     }
     
@@ -63,11 +75,5 @@ public class HardCodedSudokuLevels {
         return random;
     }
     
-    public void Reselection(int [][] gridselected){
-    for (int i = 0; i<correctGrid.length; i++){
-        for (int k = 0;k<gridselected.length; i++){
-            correctGrid[i][k] = gridselected[i][k];
-        }
-    }
-}
+  
 }

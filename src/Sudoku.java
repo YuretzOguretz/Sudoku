@@ -8,7 +8,9 @@
  *
  * @author yungu3633
  */
-
+import java.awt.*;        // Uses AWT's Layout Managers
+import java.awt.event.*;  // Uses AWT's Event Handlers
+import javax.swing.*;     // Uses Swing's Container/Components
 
 public class Sudoku extends javax.swing.JFrame {
 
@@ -21,10 +23,56 @@ public class Sudoku extends javax.swing.JFrame {
         
         HardCodedSudokuLevels CodeofTheLevel = new HardCodedSudokuLevels();
         int [][] CorrectAnswer = CodeofTheLevel.HardCodedSudokuLevels();
-        JTextField[][] tfCells = new JTextField[GRID_SIZE][GRID_SIZE];
+        final Font FONT_NUMBERS = new Font("Monospaced", Font.BOLD, 20);
         
+        JTextField[][] TT = new JTextField[9][9];
+        Container cp = getContentPane();
+        cp.setLayout(new GridLayout(9, 9));
+        final int CANVAS_WIDTH  = 60 * 9;
+        final int CANVAS_HEIGHT = 60 * 9;
+        boolean[][] masks ={{false, false, false, false, false, true, false, false, false},
+                            {false, false, false, false, false, false, false, false, true},
+                            {false, false, false, false, false, false, false, false, false},
+                            {false, false, false, false, false, false, false, false, false},
+                            {false, false, false, false, false, false, false, false, false},
+                            {false, false, false, false, false, false, false, false, false},
+                            {false, false, false, false, false, false, false, false, false},
+                            {false, false, false, false, false, false, false, false, false},
+                            {false, false, false, false, false, false, false, false, false}};
         
+    
+        String [][] TextAreas = {{"TT00","TT01","TT02","TT03","TT04","TT05","TT06","TT07","TT08"},
+                                 {"TT10","TT11","TT12","TT13","TT14","TT15","TT16","TT17","TT18"},
+                                 {"TT20","TT21","TT22","TT23","TT24","TT25","TT26","TT27","TT28"},
+                                 {"TT30","TT31","TT32","TT33","TT34","TT35","TT36","TT37","TT38"},
+                                 {"TT40","TT41","TT42","TT43","TT44","TT45","TT46","TT47","TT48"},
+                                 {"TT50","TT51","TT52","TT53","TT54","TT55","TT56","TT57","TT58"},
+                                 {"TT60","TT61","TT62","TT63","TT64","TT65","TT66","TT67","TT68"},
+                                 {"TT70","TT71","TT72","TT73","TT74","TT75","TT76","TT77","TT78"},
+                                 {"TT80","TT81","TT82","TT83","TT84","TT85","TT86","TT87","TT88"}};
+        
+        for (int row = 0; row < 9; row++) {
+         for (int col = 0; col < 9; col++) {
+             TT[row][col] = new JTextField();
+             cp.add(TT[row][col]);
+             if (masks[row][col]) {
+               TT[row][col].setText("");     
+               TT[row][col].setEditable(true);
+               
+ 
+               
+            } else {
+               TT[row][col].setText(CorrectAnswer[row][col] + "");
+         }
+             
+            TT[row][col].setHorizontalAlignment(JTextField.CENTER);
+            TT[row][col].setFont(FONT_NUMBERS);
+         }
     }
+        
+        cp.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
+        pack();
+    }    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,87 +85,87 @@ public class Sudoku extends javax.swing.JFrame {
         jTextField28 = new javax.swing.JTextField();
         PanelGame = new javax.swing.JPanel();
         MainLableS2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
-        jTextField42 = new javax.swing.JTextField();
-        jTextField43 = new javax.swing.JTextField();
-        jTextField44 = new javax.swing.JTextField();
-        jTextField45 = new javax.swing.JTextField();
-        jTextField46 = new javax.swing.JTextField();
-        jTextField47 = new javax.swing.JTextField();
-        jTextField48 = new javax.swing.JTextField();
-        jTextField49 = new javax.swing.JTextField();
-        jTextField50 = new javax.swing.JTextField();
-        jTextField51 = new javax.swing.JTextField();
-        jTextField52 = new javax.swing.JTextField();
-        jTextField53 = new javax.swing.JTextField();
-        jTextField54 = new javax.swing.JTextField();
-        jTextField55 = new javax.swing.JTextField();
-        jTextField56 = new javax.swing.JTextField();
-        jTextField57 = new javax.swing.JTextField();
-        jTextField58 = new javax.swing.JTextField();
-        jTextField59 = new javax.swing.JTextField();
-        jTextField60 = new javax.swing.JTextField();
-        jTextField61 = new javax.swing.JTextField();
-        jTextField62 = new javax.swing.JTextField();
-        jTextField63 = new javax.swing.JTextField();
-        jTextField64 = new javax.swing.JTextField();
-        jTextField65 = new javax.swing.JTextField();
-        jTextField66 = new javax.swing.JTextField();
-        jTextField67 = new javax.swing.JTextField();
-        jTextField68 = new javax.swing.JTextField();
-        jTextField69 = new javax.swing.JTextField();
-        jTextField70 = new javax.swing.JTextField();
-        jTextField71 = new javax.swing.JTextField();
-        jTextField72 = new javax.swing.JTextField();
-        jTextField73 = new javax.swing.JTextField();
-        jTextField74 = new javax.swing.JTextField();
-        jTextField75 = new javax.swing.JTextField();
-        jTextField76 = new javax.swing.JTextField();
-        jTextField77 = new javax.swing.JTextField();
-        jTextField78 = new javax.swing.JTextField();
-        jTextField79 = new javax.swing.JTextField();
-        jTextField80 = new javax.swing.JTextField();
-        jTextField82 = new javax.swing.JTextField();
-        jTextField83 = new javax.swing.JTextField();
+        TT00 = new javax.swing.JTextField();
+        TT01 = new javax.swing.JTextField();
+        TT02 = new javax.swing.JTextField();
+        TT10 = new javax.swing.JTextField();
+        TT20 = new javax.swing.JTextField();
+        TT11 = new javax.swing.JTextField();
+        TT21 = new javax.swing.JTextField();
+        TT12 = new javax.swing.JTextField();
+        TT22 = new javax.swing.JTextField();
+        TT03 = new javax.swing.JTextField();
+        TT04 = new javax.swing.JTextField();
+        TT05 = new javax.swing.JTextField();
+        TT13 = new javax.swing.JTextField();
+        TT14 = new javax.swing.JTextField();
+        TT15 = new javax.swing.JTextField();
+        TT23 = new javax.swing.JTextField();
+        TT24 = new javax.swing.JTextField();
+        TT25 = new javax.swing.JTextField();
+        TT06 = new javax.swing.JTextField();
+        TT07 = new javax.swing.JTextField();
+        TT08 = new javax.swing.JTextField();
+        TT16 = new javax.swing.JTextField();
+        TT17 = new javax.swing.JTextField();
+        TT18 = new javax.swing.JTextField();
+        TT26 = new javax.swing.JTextField();
+        TT27 = new javax.swing.JTextField();
+        TT28 = new javax.swing.JTextField();
+        TT30 = new javax.swing.JTextField();
+        TT31 = new javax.swing.JTextField();
+        TT32 = new javax.swing.JTextField();
+        TT40 = new javax.swing.JTextField();
+        TT41 = new javax.swing.JTextField();
+        TT42 = new javax.swing.JTextField();
+        TT50 = new javax.swing.JTextField();
+        TT51 = new javax.swing.JTextField();
+        TT52 = new javax.swing.JTextField();
+        TT60 = new javax.swing.JTextField();
+        TT61 = new javax.swing.JTextField();
+        TT62 = new javax.swing.JTextField();
+        TT70 = new javax.swing.JTextField();
+        TT71 = new javax.swing.JTextField();
+        TT72 = new javax.swing.JTextField();
+        TT80 = new javax.swing.JTextField();
+        TT81 = new javax.swing.JTextField();
+        TT33 = new javax.swing.JTextField();
+        TT34 = new javax.swing.JTextField();
+        TT35 = new javax.swing.JTextField();
+        TT36 = new javax.swing.JTextField();
+        TT37 = new javax.swing.JTextField();
+        TT43 = new javax.swing.JTextField();
+        TT44 = new javax.swing.JTextField();
+        TT45 = new javax.swing.JTextField();
+        TT53 = new javax.swing.JTextField();
+        TT54 = new javax.swing.JTextField();
+        TT55 = new javax.swing.JTextField();
+        TT46 = new javax.swing.JTextField();
+        TT38 = new javax.swing.JTextField();
+        TT47 = new javax.swing.JTextField();
+        TT48 = new javax.swing.JTextField();
+        TT56 = new javax.swing.JTextField();
+        TT57 = new javax.swing.JTextField();
+        TT58 = new javax.swing.JTextField();
+        TT82 = new javax.swing.JTextField();
+        TT63 = new javax.swing.JTextField();
+        TT64 = new javax.swing.JTextField();
+        TT65 = new javax.swing.JTextField();
+        TT73 = new javax.swing.JTextField();
+        TT74 = new javax.swing.JTextField();
+        TT83 = new javax.swing.JTextField();
+        TT84 = new javax.swing.JTextField();
+        TT75 = new javax.swing.JTextField();
+        TT85 = new javax.swing.JTextField();
+        TT66 = new javax.swing.JTextField();
+        TT67 = new javax.swing.JTextField();
+        TT68 = new javax.swing.JTextField();
+        TT76 = new javax.swing.JTextField();
+        TT77 = new javax.swing.JTextField();
+        TT78 = new javax.swing.JTextField();
+        TT86 = new javax.swing.JTextField();
+        TT87 = new javax.swing.JTextField();
+        TT88 = new javax.swing.JTextField();
         CheckButton = new javax.swing.JButton();
         QuitButton = new javax.swing.JButton();
         RestartButton = new javax.swing.JButton();
@@ -138,596 +186,596 @@ public class Sudoku extends javax.swing.JFrame {
         MainLableS2.setForeground(new java.awt.Color(255, 102, 102));
         MainLableS2.setText("Sudoku Master");
 
-        jTextField1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TT00.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT00.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TT00ActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TT01.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TT01ActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField3.setText(" ");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        TT02.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT02.setText(" ");
+        TT02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                TT02ActionPerformed(evt);
             }
         });
 
-        jTextField4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        TT10.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                TT10ActionPerformed(evt);
             }
         });
 
-        jTextField5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField5.setText(" ");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        TT20.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT20.setText(" ");
+        TT20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                TT20ActionPerformed(evt);
             }
         });
 
-        jTextField6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        TT11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                TT11ActionPerformed(evt);
             }
         });
 
-        jTextField7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField7.setText(" ");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        TT21.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT21.setText(" ");
+        TT21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                TT21ActionPerformed(evt);
             }
         });
 
-        jTextField8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        TT12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                TT12ActionPerformed(evt);
             }
         });
 
-        jTextField9.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField9.setText(" ");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        TT22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT22.setText(" ");
+        TT22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                TT22ActionPerformed(evt);
             }
         });
 
-        jTextField10.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        TT03.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT03.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                TT03ActionPerformed(evt);
             }
         });
 
-        jTextField11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        TT04.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT04.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                TT04ActionPerformed(evt);
             }
         });
 
-        jTextField12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        TT05.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT05.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                TT05ActionPerformed(evt);
             }
         });
 
-        jTextField13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField13.setText(" ");
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        TT13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT13.setText(" ");
+        TT13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                TT13ActionPerformed(evt);
             }
         });
 
-        jTextField14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField14.setText(" ");
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        TT14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT14.setText(" ");
+        TT14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                TT14ActionPerformed(evt);
             }
         });
 
-        jTextField15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField15.setText(" ");
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        TT15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT15.setText(" ");
+        TT15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                TT15ActionPerformed(evt);
             }
         });
 
-        jTextField16.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField16.setText(" ");
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        TT23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT23.setText(" ");
+        TT23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                TT23ActionPerformed(evt);
             }
         });
 
-        jTextField17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField17.setText(" ");
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+        TT24.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT24.setText(" ");
+        TT24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
+                TT24ActionPerformed(evt);
             }
         });
 
-        jTextField18.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField18.setText(" ");
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+        TT25.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT25.setText(" ");
+        TT25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
+                TT25ActionPerformed(evt);
             }
         });
 
-        jTextField19.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+        TT06.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT06.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
+                TT06ActionPerformed(evt);
             }
         });
 
-        jTextField20.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+        TT07.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT07.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField20ActionPerformed(evt);
+                TT07ActionPerformed(evt);
             }
         });
 
-        jTextField21.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        TT08.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT08.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                TT08ActionPerformed(evt);
             }
         });
 
-        jTextField22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField22.setText(" ");
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        TT16.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT16.setText(" ");
+        TT16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                TT16ActionPerformed(evt);
             }
         });
 
-        jTextField23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField23.setText(" ");
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+        TT17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT17.setText(" ");
+        TT17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
+                TT17ActionPerformed(evt);
             }
         });
 
-        jTextField24.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField24.setText(" ");
-        jTextField24.addActionListener(new java.awt.event.ActionListener() {
+        TT18.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT18.setText(" ");
+        TT18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField24ActionPerformed(evt);
+                TT18ActionPerformed(evt);
             }
         });
 
-        jTextField25.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField25.setText(" ");
-        jTextField25.addActionListener(new java.awt.event.ActionListener() {
+        TT26.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT26.setText(" ");
+        TT26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField25ActionPerformed(evt);
+                TT26ActionPerformed(evt);
             }
         });
 
-        jTextField26.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField26.setText(" ");
-        jTextField26.addActionListener(new java.awt.event.ActionListener() {
+        TT27.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT27.setText(" ");
+        TT27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField26ActionPerformed(evt);
+                TT27ActionPerformed(evt);
             }
         });
 
-        jTextField27.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField27.setText(" ");
-        jTextField27.addActionListener(new java.awt.event.ActionListener() {
+        TT28.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT28.setText(" ");
+        TT28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField27ActionPerformed(evt);
+                TT28ActionPerformed(evt);
             }
         });
 
-        jTextField29.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField29.setText(" ");
-        jTextField29.addActionListener(new java.awt.event.ActionListener() {
+        TT30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT30.setText(" ");
+        TT30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField29ActionPerformed(evt);
+                TT30ActionPerformed(evt);
             }
         });
 
-        jTextField30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField30.setText(" ");
-        jTextField30.addActionListener(new java.awt.event.ActionListener() {
+        TT31.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT31.setText(" ");
+        TT31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField30ActionPerformed(evt);
+                TT31ActionPerformed(evt);
             }
         });
 
-        jTextField31.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField31.setText(" ");
-        jTextField31.addActionListener(new java.awt.event.ActionListener() {
+        TT32.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT32.setText(" ");
+        TT32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField31ActionPerformed(evt);
+                TT32ActionPerformed(evt);
             }
         });
 
-        jTextField32.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField32.setText(" ");
-        jTextField32.addActionListener(new java.awt.event.ActionListener() {
+        TT40.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT40.setText(" ");
+        TT40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField32ActionPerformed(evt);
+                TT40ActionPerformed(evt);
             }
         });
 
-        jTextField33.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField33.setText(" ");
-        jTextField33.addActionListener(new java.awt.event.ActionListener() {
+        TT41.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT41.setText(" ");
+        TT41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField33ActionPerformed(evt);
+                TT41ActionPerformed(evt);
             }
         });
 
-        jTextField34.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField34.setText(" ");
-        jTextField34.addActionListener(new java.awt.event.ActionListener() {
+        TT42.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT42.setText(" ");
+        TT42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField34ActionPerformed(evt);
+                TT42ActionPerformed(evt);
             }
         });
 
-        jTextField35.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField35.setText(" ");
-        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+        TT50.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT50.setText(" ");
+        TT50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField35ActionPerformed(evt);
+                TT50ActionPerformed(evt);
             }
         });
 
-        jTextField36.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField36.setText(" ");
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+        TT51.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT51.setText(" ");
+        TT51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
+                TT51ActionPerformed(evt);
             }
         });
 
-        jTextField37.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField37.setText(" ");
-        jTextField37.addActionListener(new java.awt.event.ActionListener() {
+        TT52.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT52.setText(" ");
+        TT52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField37ActionPerformed(evt);
+                TT52ActionPerformed(evt);
             }
         });
 
-        jTextField38.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField38.addActionListener(new java.awt.event.ActionListener() {
+        TT60.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT60.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField38ActionPerformed(evt);
+                TT60ActionPerformed(evt);
             }
         });
 
-        jTextField39.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField39.addActionListener(new java.awt.event.ActionListener() {
+        TT61.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField39ActionPerformed(evt);
+                TT61ActionPerformed(evt);
             }
         });
 
-        jTextField40.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField40.addActionListener(new java.awt.event.ActionListener() {
+        TT62.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField40ActionPerformed(evt);
+                TT62ActionPerformed(evt);
             }
         });
 
-        jTextField41.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField41.addActionListener(new java.awt.event.ActionListener() {
+        TT70.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField41ActionPerformed(evt);
+                TT70ActionPerformed(evt);
             }
         });
 
-        jTextField42.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField42.addActionListener(new java.awt.event.ActionListener() {
+        TT71.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT71.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField42ActionPerformed(evt);
+                TT71ActionPerformed(evt);
             }
         });
 
-        jTextField43.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField43.addActionListener(new java.awt.event.ActionListener() {
+        TT72.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT72.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField43ActionPerformed(evt);
+                TT72ActionPerformed(evt);
             }
         });
 
-        jTextField44.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField44.addActionListener(new java.awt.event.ActionListener() {
+        TT80.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT80.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField44ActionPerformed(evt);
+                TT80ActionPerformed(evt);
             }
         });
 
-        jTextField45.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField45.addActionListener(new java.awt.event.ActionListener() {
+        TT81.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT81.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField45ActionPerformed(evt);
+                TT81ActionPerformed(evt);
             }
         });
 
-        jTextField46.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField46.setText(" ");
-        jTextField46.addActionListener(new java.awt.event.ActionListener() {
+        TT33.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT33.setText(" ");
+        TT33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField46ActionPerformed(evt);
+                TT33ActionPerformed(evt);
             }
         });
 
-        jTextField47.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField47.addActionListener(new java.awt.event.ActionListener() {
+        TT34.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField47ActionPerformed(evt);
+                TT34ActionPerformed(evt);
             }
         });
 
-        jTextField48.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField48.addActionListener(new java.awt.event.ActionListener() {
+        TT35.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField48ActionPerformed(evt);
+                TT35ActionPerformed(evt);
             }
         });
 
-        jTextField49.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField49.addActionListener(new java.awt.event.ActionListener() {
+        TT36.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField49ActionPerformed(evt);
+                TT36ActionPerformed(evt);
             }
         });
 
-        jTextField50.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField50.addActionListener(new java.awt.event.ActionListener() {
+        TT37.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField50ActionPerformed(evt);
+                TT37ActionPerformed(evt);
             }
         });
 
-        jTextField51.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField51.addActionListener(new java.awt.event.ActionListener() {
+        TT43.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField51ActionPerformed(evt);
+                TT43ActionPerformed(evt);
             }
         });
 
-        jTextField52.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField52.addActionListener(new java.awt.event.ActionListener() {
+        TT44.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField52ActionPerformed(evt);
+                TT44ActionPerformed(evt);
             }
         });
 
-        jTextField53.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField53.addActionListener(new java.awt.event.ActionListener() {
+        TT45.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField53ActionPerformed(evt);
+                TT45ActionPerformed(evt);
             }
         });
 
-        jTextField54.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField54.addActionListener(new java.awt.event.ActionListener() {
+        TT53.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField54ActionPerformed(evt);
+                TT53ActionPerformed(evt);
             }
         });
 
-        jTextField55.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField55.addActionListener(new java.awt.event.ActionListener() {
+        TT54.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField55ActionPerformed(evt);
+                TT54ActionPerformed(evt);
             }
         });
 
-        jTextField56.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField56.addActionListener(new java.awt.event.ActionListener() {
+        TT55.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField56ActionPerformed(evt);
+                TT55ActionPerformed(evt);
             }
         });
 
-        jTextField57.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField57.addActionListener(new java.awt.event.ActionListener() {
+        TT46.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField57ActionPerformed(evt);
+                TT46ActionPerformed(evt);
             }
         });
 
-        jTextField58.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField58.addActionListener(new java.awt.event.ActionListener() {
+        TT38.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField58ActionPerformed(evt);
+                TT38ActionPerformed(evt);
             }
         });
 
-        jTextField59.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField59.addActionListener(new java.awt.event.ActionListener() {
+        TT47.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT47.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField59ActionPerformed(evt);
+                TT47ActionPerformed(evt);
             }
         });
 
-        jTextField60.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField60.addActionListener(new java.awt.event.ActionListener() {
+        TT48.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT48.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField60ActionPerformed(evt);
+                TT48ActionPerformed(evt);
             }
         });
 
-        jTextField61.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField61.addActionListener(new java.awt.event.ActionListener() {
+        TT56.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField61ActionPerformed(evt);
+                TT56ActionPerformed(evt);
             }
         });
 
-        jTextField62.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField62.addActionListener(new java.awt.event.ActionListener() {
+        TT57.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT57.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField62ActionPerformed(evt);
+                TT57ActionPerformed(evt);
             }
         });
 
-        jTextField63.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField63.addActionListener(new java.awt.event.ActionListener() {
+        TT58.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT58.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField63ActionPerformed(evt);
+                TT58ActionPerformed(evt);
             }
         });
 
-        jTextField64.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField64.addActionListener(new java.awt.event.ActionListener() {
+        TT82.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT82.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField64ActionPerformed(evt);
+                TT82ActionPerformed(evt);
             }
         });
 
-        jTextField65.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField65.addActionListener(new java.awt.event.ActionListener() {
+        TT63.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField65ActionPerformed(evt);
+                TT63ActionPerformed(evt);
             }
         });
 
-        jTextField66.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField66.addActionListener(new java.awt.event.ActionListener() {
+        TT64.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField66ActionPerformed(evt);
+                TT64ActionPerformed(evt);
             }
         });
 
-        jTextField67.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField67.addActionListener(new java.awt.event.ActionListener() {
+        TT65.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField67ActionPerformed(evt);
+                TT65ActionPerformed(evt);
             }
         });
 
-        jTextField68.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField68.addActionListener(new java.awt.event.ActionListener() {
+        TT73.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT73.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField68ActionPerformed(evt);
+                TT73ActionPerformed(evt);
             }
         });
 
-        jTextField69.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField69.addActionListener(new java.awt.event.ActionListener() {
+        TT74.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT74.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField69ActionPerformed(evt);
+                TT74ActionPerformed(evt);
             }
         });
 
-        jTextField70.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField70.addActionListener(new java.awt.event.ActionListener() {
+        TT83.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT83.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField70ActionPerformed(evt);
+                TT83ActionPerformed(evt);
             }
         });
 
-        jTextField71.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField71.addActionListener(new java.awt.event.ActionListener() {
+        TT84.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT84.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField71ActionPerformed(evt);
+                TT84ActionPerformed(evt);
             }
         });
 
-        jTextField72.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField72.addActionListener(new java.awt.event.ActionListener() {
+        TT75.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT75.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField72ActionPerformed(evt);
+                TT75ActionPerformed(evt);
             }
         });
 
-        jTextField73.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField73.addActionListener(new java.awt.event.ActionListener() {
+        TT85.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT85.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField73ActionPerformed(evt);
+                TT85ActionPerformed(evt);
             }
         });
 
-        jTextField74.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField74.addActionListener(new java.awt.event.ActionListener() {
+        TT66.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField74ActionPerformed(evt);
+                TT66ActionPerformed(evt);
             }
         });
 
-        jTextField75.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField75.addActionListener(new java.awt.event.ActionListener() {
+        TT67.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT67.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField75ActionPerformed(evt);
+                TT67ActionPerformed(evt);
             }
         });
 
-        jTextField76.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField76.addActionListener(new java.awt.event.ActionListener() {
+        TT68.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT68.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField76ActionPerformed(evt);
+                TT68ActionPerformed(evt);
             }
         });
 
-        jTextField77.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField77.addActionListener(new java.awt.event.ActionListener() {
+        TT76.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT76.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField77ActionPerformed(evt);
+                TT76ActionPerformed(evt);
             }
         });
 
-        jTextField78.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField78.addActionListener(new java.awt.event.ActionListener() {
+        TT77.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT77.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField78ActionPerformed(evt);
+                TT77ActionPerformed(evt);
             }
         });
 
-        jTextField79.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField79.addActionListener(new java.awt.event.ActionListener() {
+        TT78.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT78.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField79ActionPerformed(evt);
+                TT78ActionPerformed(evt);
             }
         });
 
-        jTextField80.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField80.addActionListener(new java.awt.event.ActionListener() {
+        TT86.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT86.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField80ActionPerformed(evt);
+                TT86ActionPerformed(evt);
             }
         });
 
-        jTextField82.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField82.addActionListener(new java.awt.event.ActionListener() {
+        TT87.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT87.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField82ActionPerformed(evt);
+                TT87ActionPerformed(evt);
             }
         });
 
-        jTextField83.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jTextField83.addActionListener(new java.awt.event.ActionListener() {
+        TT88.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        TT88.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField83ActionPerformed(evt);
+                TT88ActionPerformed(evt);
             }
         });
 
@@ -762,174 +810,174 @@ public class Sudoku extends javax.swing.JFrame {
                     .addGroup(PanelGameLayout.createSequentialGroup()
                         .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TT60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TT61, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TT62, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TT70, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TT71, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TT72, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelGameLayout.createSequentialGroup()
                                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(PanelGameLayout.createSequentialGroup()
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(TT15, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(PanelGameLayout.createSequentialGroup()
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT00, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT01, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT02, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(26, 26, 26)
-                                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT03, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT04, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(TT05, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(PanelGameLayout.createSequentialGroup()
                                             .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT21, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT22, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT30, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT31, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT32, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGap(26, 26, 26)))
                                             .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField46, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT33, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField47, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT34, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField48, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(TT35, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT23, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT24, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(TT25, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField51, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT43, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField52, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT44, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField53, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(TT45, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField54, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT53, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField55, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT54, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField56, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(TT55, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField65, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT63, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField66, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT64, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField67, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(TT65, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField68, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT73, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField69, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT74, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(TT75, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(PanelGameLayout.createSequentialGroup()
-                                                    .addComponent(jTextField70, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT83, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField71, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(TT84, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                    .addComponent(TT85, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(PanelGameLayout.createSequentialGroup()
-                                        .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT40, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT41, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TT42, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PanelGameLayout.createSequentialGroup()
-                                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT50, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT51, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TT52, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PanelGameLayout.createSequentialGroup()
-                                        .addComponent(jTextField44, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT80, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField45, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT81, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField64, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(TT82, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(26, 26, 26)
                                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGameLayout.createSequentialGroup()
-                                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT06, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT07, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TT08, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGameLayout.createSequentialGroup()
-                                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT16, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TT17, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TT18, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGameLayout.createSequentialGroup()
                                         .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField49, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField57, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField61, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField74, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField77, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField80, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(TT36, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT26, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT46, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT56, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT66, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT76, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TT86, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT27, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TT28, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField50, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT37, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField58, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TT38, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField59, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT47, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TT48, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField62, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT57, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField63, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TT58, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT67, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField76, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TT68, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField78, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT77, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField79, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TT78, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(PanelGameLayout.createSequentialGroup()
-                                                .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(TT87, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                                .addComponent(TT88, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PanelGameLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
@@ -951,103 +999,103 @@ public class Sudoku extends javax.swing.JFrame {
                 .addComponent(MainLableS2)
                 .addGap(25, 25, 25)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT00, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT04, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT05, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT06, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT07, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT08, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField79, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField80, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TT80, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT81, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT83, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT84, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT85, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT86, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TT88, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(PanelGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CheckButton)
@@ -1055,6 +1103,9 @@ public class Sudoku extends javax.swing.JFrame {
                     .addComponent(RestartButton))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
+
+        TT00.getAccessibleContext().setAccessibleName("");
+        TT00.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1071,333 +1122,333 @@ public class Sudoku extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TT00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT00ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TT00ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TT01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT01ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TT01ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void TT02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT02ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_TT02ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void TT10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_TT10ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void TT20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT20ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_TT20ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void TT11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_TT11ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void TT21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT21ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_TT21ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void TT12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_TT12ActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void TT22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT22ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_TT22ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void TT03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT03ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_TT03ActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void TT04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT04ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_TT04ActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void TT05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT05ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_TT05ActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void TT13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_TT13ActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+    private void TT14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT14ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    }//GEN-LAST:event_TT14ActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void TT15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_TT15ActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void TT23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT23ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_TT23ActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+    private void TT24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT24ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
+    }//GEN-LAST:event_TT24ActionPerformed
 
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+    private void TT25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT25ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_TT25ActionPerformed
 
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+    private void TT06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT06ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
+    }//GEN-LAST:event_TT06ActionPerformed
 
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
+    private void TT07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT07ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20ActionPerformed
+    }//GEN-LAST:event_TT07ActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void TT08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT08ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_TT08ActionPerformed
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+    private void TT16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT16ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    }//GEN-LAST:event_TT16ActionPerformed
 
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+    private void TT17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT17ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
+    }//GEN-LAST:event_TT17ActionPerformed
 
-    private void jTextField24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24ActionPerformed
+    private void TT18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT18ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField24ActionPerformed
+    }//GEN-LAST:event_TT18ActionPerformed
 
-    private void jTextField25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField25ActionPerformed
+    private void TT26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT26ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField25ActionPerformed
+    }//GEN-LAST:event_TT26ActionPerformed
 
-    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
+    private void TT27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT27ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField26ActionPerformed
+    }//GEN-LAST:event_TT27ActionPerformed
 
-    private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
+    private void TT28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT28ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField27ActionPerformed
+    }//GEN-LAST:event_TT28ActionPerformed
 
     private void jTextField28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField28ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField28ActionPerformed
 
-    private void jTextField29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField29ActionPerformed
+    private void TT30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT30ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField29ActionPerformed
+    }//GEN-LAST:event_TT30ActionPerformed
 
-    private void jTextField30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField30ActionPerformed
+    private void TT31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT31ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField30ActionPerformed
+    }//GEN-LAST:event_TT31ActionPerformed
 
-    private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
+    private void TT32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT32ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField31ActionPerformed
+    }//GEN-LAST:event_TT32ActionPerformed
 
-    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
+    private void TT40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT40ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField32ActionPerformed
+    }//GEN-LAST:event_TT40ActionPerformed
 
-    private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
+    private void TT41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT41ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField33ActionPerformed
+    }//GEN-LAST:event_TT41ActionPerformed
 
-    private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
+    private void TT42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT42ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField34ActionPerformed
+    }//GEN-LAST:event_TT42ActionPerformed
 
-    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
+    private void TT50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT50ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35ActionPerformed
+    }//GEN-LAST:event_TT50ActionPerformed
 
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    private void TT51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT51ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_TT51ActionPerformed
 
-    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+    private void TT52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT52ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField37ActionPerformed
+    }//GEN-LAST:event_TT52ActionPerformed
 
-    private void jTextField38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38ActionPerformed
+    private void TT60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT60ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField38ActionPerformed
+    }//GEN-LAST:event_TT60ActionPerformed
 
-    private void jTextField39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39ActionPerformed
+    private void TT61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT61ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField39ActionPerformed
+    }//GEN-LAST:event_TT61ActionPerformed
 
-    private void jTextField40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField40ActionPerformed
+    private void TT62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT62ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField40ActionPerformed
+    }//GEN-LAST:event_TT62ActionPerformed
 
-    private void jTextField41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField41ActionPerformed
+    private void TT70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT70ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField41ActionPerformed
+    }//GEN-LAST:event_TT70ActionPerformed
 
-    private void jTextField42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField42ActionPerformed
+    private void TT71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT71ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField42ActionPerformed
+    }//GEN-LAST:event_TT71ActionPerformed
 
-    private void jTextField43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField43ActionPerformed
+    private void TT72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT72ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField43ActionPerformed
+    }//GEN-LAST:event_TT72ActionPerformed
 
-    private void jTextField44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField44ActionPerformed
+    private void TT80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT80ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField44ActionPerformed
+    }//GEN-LAST:event_TT80ActionPerformed
 
-    private void jTextField45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField45ActionPerformed
+    private void TT81ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT81ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField45ActionPerformed
+    }//GEN-LAST:event_TT81ActionPerformed
 
-    private void jTextField46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField46ActionPerformed
+    private void TT33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT33ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField46ActionPerformed
+    }//GEN-LAST:event_TT33ActionPerformed
 
-    private void jTextField47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField47ActionPerformed
+    private void TT34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT34ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField47ActionPerformed
+    }//GEN-LAST:event_TT34ActionPerformed
 
-    private void jTextField48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField48ActionPerformed
+    private void TT35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT35ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField48ActionPerformed
+    }//GEN-LAST:event_TT35ActionPerformed
 
-    private void jTextField49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField49ActionPerformed
+    private void TT36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT36ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField49ActionPerformed
+    }//GEN-LAST:event_TT36ActionPerformed
 
-    private void jTextField50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField50ActionPerformed
+    private void TT37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT37ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField50ActionPerformed
+    }//GEN-LAST:event_TT37ActionPerformed
 
-    private void jTextField51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField51ActionPerformed
+    private void TT43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT43ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField51ActionPerformed
+    }//GEN-LAST:event_TT43ActionPerformed
 
-    private void jTextField52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField52ActionPerformed
+    private void TT44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT44ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField52ActionPerformed
+    }//GEN-LAST:event_TT44ActionPerformed
 
-    private void jTextField53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField53ActionPerformed
+    private void TT45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT45ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField53ActionPerformed
+    }//GEN-LAST:event_TT45ActionPerformed
 
-    private void jTextField54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField54ActionPerformed
+    private void TT53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT53ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField54ActionPerformed
+    }//GEN-LAST:event_TT53ActionPerformed
 
-    private void jTextField55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField55ActionPerformed
+    private void TT54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT54ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField55ActionPerformed
+    }//GEN-LAST:event_TT54ActionPerformed
 
-    private void jTextField56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField56ActionPerformed
+    private void TT55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT55ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField56ActionPerformed
+    }//GEN-LAST:event_TT55ActionPerformed
 
-    private void jTextField57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField57ActionPerformed
+    private void TT46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT46ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField57ActionPerformed
+    }//GEN-LAST:event_TT46ActionPerformed
 
-    private void jTextField58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField58ActionPerformed
+    private void TT38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT38ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField58ActionPerformed
+    }//GEN-LAST:event_TT38ActionPerformed
 
-    private void jTextField59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField59ActionPerformed
+    private void TT47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT47ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField59ActionPerformed
+    }//GEN-LAST:event_TT47ActionPerformed
 
-    private void jTextField60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField60ActionPerformed
+    private void TT48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT48ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField60ActionPerformed
+    }//GEN-LAST:event_TT48ActionPerformed
 
-    private void jTextField61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField61ActionPerformed
+    private void TT56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT56ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField61ActionPerformed
+    }//GEN-LAST:event_TT56ActionPerformed
 
-    private void jTextField62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField62ActionPerformed
+    private void TT57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT57ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField62ActionPerformed
+    }//GEN-LAST:event_TT57ActionPerformed
 
-    private void jTextField63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField63ActionPerformed
+    private void TT58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT58ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField63ActionPerformed
+    }//GEN-LAST:event_TT58ActionPerformed
 
-    private void jTextField64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField64ActionPerformed
+    private void TT82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT82ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField64ActionPerformed
+    }//GEN-LAST:event_TT82ActionPerformed
 
-    private void jTextField65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField65ActionPerformed
+    private void TT63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT63ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField65ActionPerformed
+    }//GEN-LAST:event_TT63ActionPerformed
 
-    private void jTextField66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField66ActionPerformed
+    private void TT64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT64ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField66ActionPerformed
+    }//GEN-LAST:event_TT64ActionPerformed
 
-    private void jTextField67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField67ActionPerformed
+    private void TT65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT65ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField67ActionPerformed
+    }//GEN-LAST:event_TT65ActionPerformed
 
-    private void jTextField68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField68ActionPerformed
+    private void TT73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT73ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField68ActionPerformed
+    }//GEN-LAST:event_TT73ActionPerformed
 
-    private void jTextField69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField69ActionPerformed
+    private void TT74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT74ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField69ActionPerformed
+    }//GEN-LAST:event_TT74ActionPerformed
 
-    private void jTextField70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField70ActionPerformed
+    private void TT83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT83ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField70ActionPerformed
+    }//GEN-LAST:event_TT83ActionPerformed
 
-    private void jTextField71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField71ActionPerformed
+    private void TT84ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT84ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField71ActionPerformed
+    }//GEN-LAST:event_TT84ActionPerformed
 
-    private void jTextField72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField72ActionPerformed
+    private void TT75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT75ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField72ActionPerformed
+    }//GEN-LAST:event_TT75ActionPerformed
 
-    private void jTextField73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField73ActionPerformed
+    private void TT85ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT85ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField73ActionPerformed
+    }//GEN-LAST:event_TT85ActionPerformed
 
-    private void jTextField74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField74ActionPerformed
+    private void TT66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT66ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField74ActionPerformed
+    }//GEN-LAST:event_TT66ActionPerformed
 
-    private void jTextField75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField75ActionPerformed
+    private void TT67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT67ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField75ActionPerformed
+    }//GEN-LAST:event_TT67ActionPerformed
 
-    private void jTextField76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField76ActionPerformed
+    private void TT68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT68ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField76ActionPerformed
+    }//GEN-LAST:event_TT68ActionPerformed
 
-    private void jTextField77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField77ActionPerformed
+    private void TT76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT76ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField77ActionPerformed
+    }//GEN-LAST:event_TT76ActionPerformed
 
-    private void jTextField78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField78ActionPerformed
+    private void TT77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT77ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField78ActionPerformed
+    }//GEN-LAST:event_TT77ActionPerformed
 
-    private void jTextField79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField79ActionPerformed
+    private void TT78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT78ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField79ActionPerformed
+    }//GEN-LAST:event_TT78ActionPerformed
 
-    private void jTextField80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField80ActionPerformed
+    private void TT86ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT86ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField80ActionPerformed
+    }//GEN-LAST:event_TT86ActionPerformed
 
-    private void jTextField82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField82ActionPerformed
+    private void TT87ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT87ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField82ActionPerformed
+    }//GEN-LAST:event_TT87ActionPerformed
 
-    private void jTextField83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField83ActionPerformed
+    private void TT88ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TT88ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField83ActionPerformed
+    }//GEN-LAST:event_TT88ActionPerformed
 
     private void CheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckButtonActionPerformed
    
@@ -1454,87 +1505,87 @@ public class Sudoku extends javax.swing.JFrame {
     private javax.swing.JPanel PanelGame;
     private javax.swing.JButton QuitButton;
     private javax.swing.JButton RestartButton;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField TT00;
+    private javax.swing.JTextField TT01;
+    private javax.swing.JTextField TT02;
+    private javax.swing.JTextField TT03;
+    private javax.swing.JTextField TT04;
+    private javax.swing.JTextField TT05;
+    private javax.swing.JTextField TT06;
+    private javax.swing.JTextField TT07;
+    private javax.swing.JTextField TT08;
+    private javax.swing.JTextField TT10;
+    private javax.swing.JTextField TT11;
+    private javax.swing.JTextField TT12;
+    private javax.swing.JTextField TT13;
+    private javax.swing.JTextField TT14;
+    private javax.swing.JTextField TT15;
+    private javax.swing.JTextField TT16;
+    private javax.swing.JTextField TT17;
+    private javax.swing.JTextField TT18;
+    private javax.swing.JTextField TT20;
+    private javax.swing.JTextField TT21;
+    private javax.swing.JTextField TT22;
+    private javax.swing.JTextField TT23;
+    private javax.swing.JTextField TT24;
+    private javax.swing.JTextField TT25;
+    private javax.swing.JTextField TT26;
+    private javax.swing.JTextField TT27;
+    private javax.swing.JTextField TT28;
+    private javax.swing.JTextField TT30;
+    private javax.swing.JTextField TT31;
+    private javax.swing.JTextField TT32;
+    private javax.swing.JTextField TT33;
+    private javax.swing.JTextField TT34;
+    private javax.swing.JTextField TT35;
+    private javax.swing.JTextField TT36;
+    private javax.swing.JTextField TT37;
+    private javax.swing.JTextField TT38;
+    private javax.swing.JTextField TT40;
+    private javax.swing.JTextField TT41;
+    private javax.swing.JTextField TT42;
+    private javax.swing.JTextField TT43;
+    private javax.swing.JTextField TT44;
+    private javax.swing.JTextField TT45;
+    private javax.swing.JTextField TT46;
+    private javax.swing.JTextField TT47;
+    private javax.swing.JTextField TT48;
+    private javax.swing.JTextField TT50;
+    private javax.swing.JTextField TT51;
+    private javax.swing.JTextField TT52;
+    private javax.swing.JTextField TT53;
+    private javax.swing.JTextField TT54;
+    private javax.swing.JTextField TT55;
+    private javax.swing.JTextField TT56;
+    private javax.swing.JTextField TT57;
+    private javax.swing.JTextField TT58;
+    private javax.swing.JTextField TT60;
+    private javax.swing.JTextField TT61;
+    private javax.swing.JTextField TT62;
+    private javax.swing.JTextField TT63;
+    private javax.swing.JTextField TT64;
+    private javax.swing.JTextField TT65;
+    private javax.swing.JTextField TT66;
+    private javax.swing.JTextField TT67;
+    private javax.swing.JTextField TT68;
+    private javax.swing.JTextField TT70;
+    private javax.swing.JTextField TT71;
+    private javax.swing.JTextField TT72;
+    private javax.swing.JTextField TT73;
+    private javax.swing.JTextField TT74;
+    private javax.swing.JTextField TT75;
+    private javax.swing.JTextField TT76;
+    private javax.swing.JTextField TT77;
+    private javax.swing.JTextField TT78;
+    private javax.swing.JTextField TT80;
+    private javax.swing.JTextField TT81;
+    private javax.swing.JTextField TT82;
+    private javax.swing.JTextField TT83;
+    private javax.swing.JTextField TT84;
+    private javax.swing.JTextField TT85;
+    private javax.swing.JTextField TT86;
+    private javax.swing.JTextField TT87;
+    private javax.swing.JTextField TT88;
     private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
-    private javax.swing.JTextField jTextField43;
-    private javax.swing.JTextField jTextField44;
-    private javax.swing.JTextField jTextField45;
-    private javax.swing.JTextField jTextField46;
-    private javax.swing.JTextField jTextField47;
-    private javax.swing.JTextField jTextField48;
-    private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField50;
-    private javax.swing.JTextField jTextField51;
-    private javax.swing.JTextField jTextField52;
-    private javax.swing.JTextField jTextField53;
-    private javax.swing.JTextField jTextField54;
-    private javax.swing.JTextField jTextField55;
-    private javax.swing.JTextField jTextField56;
-    private javax.swing.JTextField jTextField57;
-    private javax.swing.JTextField jTextField58;
-    private javax.swing.JTextField jTextField59;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField60;
-    private javax.swing.JTextField jTextField61;
-    private javax.swing.JTextField jTextField62;
-    private javax.swing.JTextField jTextField63;
-    private javax.swing.JTextField jTextField64;
-    private javax.swing.JTextField jTextField65;
-    private javax.swing.JTextField jTextField66;
-    private javax.swing.JTextField jTextField67;
-    private javax.swing.JTextField jTextField68;
-    private javax.swing.JTextField jTextField69;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField70;
-    private javax.swing.JTextField jTextField71;
-    private javax.swing.JTextField jTextField72;
-    private javax.swing.JTextField jTextField73;
-    private javax.swing.JTextField jTextField74;
-    private javax.swing.JTextField jTextField75;
-    private javax.swing.JTextField jTextField76;
-    private javax.swing.JTextField jTextField77;
-    private javax.swing.JTextField jTextField78;
-    private javax.swing.JTextField jTextField79;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField80;
-    private javax.swing.JTextField jTextField82;
-    private javax.swing.JTextField jTextField83;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
