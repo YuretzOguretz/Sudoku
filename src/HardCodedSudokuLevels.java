@@ -45,7 +45,7 @@
     
     int random = RandomGrid();
     
-    if (random ==1){
+    if (random == 1){
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
             
@@ -60,7 +60,7 @@
         }
     }
     }
-    else if(random == 3) {
+    else {
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
             correctGrid[i][k] = GridNum3[i][k];
@@ -71,7 +71,7 @@
     }
     
     public int RandomGrid(){
-        int random = (int) Math.random()*3+1;
+        int random = (int) (Math.random()*3)+1;
         return random;
     }
     
