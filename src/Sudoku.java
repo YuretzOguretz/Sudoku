@@ -24,6 +24,7 @@ public class Sudoku extends javax.swing.JFrame {
         HardCodedSudokuLevels CodeofTheLevel = new HardCodedSudokuLevels();
         int [][] CorrectAnswer = CodeofTheLevel.HardCodedSudokuLevels();
         final Font FONT_NUMBERS = new Font("Monospaced", Font.BOLD, 20);
+        final Font FONT_TITLE = new Font("TW Cen MT Condensed Extra Bold", Font.BOLD, 24);
         
         JTextField[][] TT = new JTextField[9][9];
         Container cp = getContentPane();
@@ -37,7 +38,8 @@ public class Sudoku extends javax.swing.JFrame {
         addGB(new JLabel(" "), 0, 0);
         constraints.gridwidth = 5;
         JLabel title = new JLabel("Sudoku Master");
-        title.setFont(FONT_NUMBERS);
+        title.setFont(FONT_TITLE);
+        title.setForeground(new Color(255,102,102));
         title.setHorizontalAlignment(JTextField.CENTER);
         addGB(title, 2, 0);
         constraints.gridwidth = 2;
@@ -48,8 +50,8 @@ public class Sudoku extends javax.swing.JFrame {
         addGB(space1, 0, 1);
         constraints.gridwidth = 1;
         
-        final int CANVAS_WIDTH  = 100 * 9;
-        final int CANVAS_HEIGHT = 100 * 9;
+        final int CANVAS_WIDTH  = 90 * 9;
+        final int CANVAS_HEIGHT = 90 * 9;
         boolean[][] masks ={{false, false, false, false, false, true, false, false, false},
                             {false, false, false, false, false, false, false, false, true},
                             {false, false, false, false, false, false, false, false, false},
