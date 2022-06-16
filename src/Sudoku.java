@@ -109,7 +109,7 @@ public class Sudoku extends javax.swing.JFrame {
         
                     dispose();
                 }
-                
+                score = 0;
                 System.out.println("It works!");
             }
         });
@@ -121,7 +121,11 @@ public class Sudoku extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("It works!");
-                
+                Sudoku s2 = new Sudoku();
+                s2.show();
+        
+        
+                dispose();
             }
         });
         addGB(new JLabel(" "), 5, 13);
@@ -132,6 +136,11 @@ public class Sudoku extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("It works!");
+                MainPageOfSudoku s2 = new MainPageOfSudoku();
+                s2.show();
+        
+        
+                dispose();
             }
         });
         constraints.gridwidth = 1;

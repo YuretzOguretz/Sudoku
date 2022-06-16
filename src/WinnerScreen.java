@@ -35,7 +35,7 @@ public class WinnerScreen extends javax.swing.JFrame {
 
         WinPanel.setBackground(new java.awt.Color(153, 153, 255));
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 102));
         jLabel1.setText("Yey! You won!");
 
@@ -46,6 +46,8 @@ public class WinnerScreen extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maxresdefault2.jpg"))); // NOI18N
+
         javax.swing.GroupLayout WinPanelLayout = new javax.swing.GroupLayout(WinPanel);
         WinPanel.setLayout(WinPanelLayout);
         WinPanelLayout.setHorizontalGroup(
@@ -53,35 +55,33 @@ public class WinnerScreen extends javax.swing.JFrame {
             .addGroup(WinPanelLayout.createSequentialGroup()
                 .addGroup(WinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(WinPanelLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
+                        .addGap(213, 213, 213)
                         .addComponent(jLabel2))
                     .addGroup(WinPanelLayout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel1))
+                        .addGap(423, 423, 423)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(WinPanelLayout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(jButton1)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                        .addGap(386, 386, 386)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
         WinPanelLayout.setVerticalGroup(
             WinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WinPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(138, 138, 138)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88)
                 .addComponent(jLabel2)
-                .addGap(33, 33, 33)
-                .addComponent(jButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(147, 147, 147)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(WinPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(WinPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
