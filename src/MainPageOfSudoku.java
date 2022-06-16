@@ -119,27 +119,19 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        if ((DifficultyDropBox.getSelectedItem()).equals("Easy")){
+        
         Sudoku s2 = new Sudoku();
         s2.show();
         
+        
         dispose();
-        }
-        else {
-           NoteLable.setText("                 This may be too hard for you... That's the reason,");
-           NoteLable2.setText("                 and not because I didn't code harder difficulties.");
-        }
+        Difficultyselector df = new Difficultyselector();
+        df.setDifficulty((DifficultyDropBox.getSelectedItem().toString()));
+        
     }//GEN-LAST:event_StartButtonActionPerformed
 
     private void DifficultyDropBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DifficultyDropBoxActionPerformed
-        if ((DifficultyDropBox.getSelectedItem()).equals("Easy")){
-           NoteLable.setText("                                      Click start to begin ");
-           NoteLable2.setText(" ");
-        }
-        else {
-           NoteLable.setText("                 This may be too hard for you... That's the reason,");
-           NoteLable2.setText("                 and not because I didn't code harder difficulties.");
-        }
+        
     }//GEN-LAST:event_DifficultyDropBoxActionPerformed
 
     /**

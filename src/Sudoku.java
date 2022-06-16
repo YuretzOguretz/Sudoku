@@ -26,6 +26,8 @@ public class Sudoku extends javax.swing.JFrame {
         final Font FONT_NUMBERS = new Font("Monospaced", Font.BOLD, 20);
         final Font FONT_TITLE = new Font("TW Cen MT Condensed Extra Bold", Font.BOLD, 24);
         
+
+        
         JTextField[][] TT = new JTextField[9][9];
         Container cp = getContentPane();
         cp.setLayout(new GridBagLayout());
@@ -52,15 +54,8 @@ public class Sudoku extends javax.swing.JFrame {
         
         final int CANVAS_WIDTH  = 90 * 9;
         final int CANVAS_HEIGHT = 90 * 9;
-        boolean[][] masks ={{false, false, false, false, false, true, false, false, false},
-                            {false, false, false, false, false, false, false, false, true},
-                            {false, false, false, false, false, false, false, false, false},
-                            {false, false, false, false, false, false, false, false, false},
-                            {false, false, false, false, false, false, false, false, false},
-                            {false, false, false, false, false, false, false, false, false},
-                            {false, false, false, false, false, false, false, false, false},
-                            {false, false, false, false, false, false, false, false, false},
-                            {false, false, false, false, false, false, false, false, false}};
+        Difficultyselector df = new Difficultyselector();
+        boolean[][] masks = df.Difficultyselector(df.getDifficulty());
         
     
         
@@ -94,6 +89,27 @@ public class Sudoku extends javax.swing.JFrame {
         Chek.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int score = 0;
+                for (int row = 0; row < 9; row++) {
+                    for (int col = 0; col < 9; col++) {
+                      if (TT[row][col].getText().equals(CorrectAnswer[row][col]+"")){
+                          TT[row][col].setForeground(Color.green);
+                          score++;
+                      } 
+                      else {
+                          TT[row][col].setForeground(Color.red);
+                      }
+                    }
+                }
+                
+                if (score == 81){
+                    WinnerScreen s3 = new WinnerScreen();
+                    s3.show();
+        
+        
+                    dispose();
+                }
+                
                 System.out.println("It works!");
             }
         });
@@ -105,6 +121,7 @@ public class Sudoku extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("It works!");
+                
             }
         });
         addGB(new JLabel(" "), 5, 13);
