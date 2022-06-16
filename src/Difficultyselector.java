@@ -13,7 +13,7 @@ public class Difficultyselector {
     private static String Dificulty = "";
     
     
-    public boolean [][] Difficultyselector(String m){
+    public boolean [][] Difficultyselector(){
         
         boolean[][] masks1 ={{true, false, true, true, false, true, true, false, false},
                              {true, false, true, true, true, true, false, false, true},
@@ -57,28 +57,28 @@ public class Difficultyselector {
                             {false, true, true, false, false, true, true, true, true}};
         
         
-        if ( m == Dificulty){
+        if ( Dificulty == "Easy"){
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
             Difficultyselector[i][k] = masks1[i][k];
                 }
             }
         }
-        else if (m == Dificulty){
+        else if ( Dificulty == "Medium"){
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
             Difficultyselector[i][k] = masks2[i][k];
                 }
             }    
         }
-        else if (m == Dificulty){
+        else if ( Dificulty == "Hard"){
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
             Difficultyselector[i][k] = masks3[i][k];
                 }
             }    
         }
-        else if (m == Dificulty){
+        else if ( Dificulty == "Expert"){
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
             Difficultyselector[i][k] = masks4[i][k];

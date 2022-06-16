@@ -36,26 +36,26 @@ public class Sudoku extends javax.swing.JFrame {
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
         int x, y;
-        constraints.gridwidth = 2;
+        constraints.gridwidth = 1;
         addGB(new JLabel(" "), 0, 0);
-        constraints.gridwidth = 5;
+        constraints.gridwidth = 7;
         JLabel title = new JLabel("Sudoku Master");
         title.setFont(FONT_TITLE);
         title.setForeground(new Color(255,102,102));
         title.setHorizontalAlignment(JTextField.CENTER);
-        addGB(title, 2, 0);
-        constraints.gridwidth = 2;
-        addGB(new JLabel(" "), 7, 0);
+        addGB(title, 1, 0);
+        constraints.gridwidth = 1;
+        addGB(new JLabel(" "), 8, 0);
         constraints.gridwidth = 9;
         JLabel space1 = new JLabel(" ");
         space1.setFont(FONT_NUMBERS);
         addGB(space1, 0, 1);
         constraints.gridwidth = 1;
         
-        final int CANVAS_WIDTH  = 90 * 9;
-        final int CANVAS_HEIGHT = 90 * 9;
+        final int CANVAS_WIDTH  = 75 * 9;
+        final int CANVAS_HEIGHT = 75 * 9;
         Difficultyselector df = new Difficultyselector();
-        boolean[][] masks = df.Difficultyselector(df.getDifficulty());
+        boolean[][] masks = df.Difficultyselector();
         
     
         

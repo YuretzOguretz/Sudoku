@@ -30,7 +30,6 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
         StartButton = new javax.swing.JButton();
         NoteLable = new javax.swing.JLabel();
         DifficultyDropBox = new javax.swing.JComboBox<>();
-        NoteLable2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,8 +60,6 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
             }
         });
 
-        NoteLable2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
         javax.swing.GroupLayout PanelMSLayout = new javax.swing.GroupLayout(PanelMS);
         PanelMS.setLayout(PanelMSLayout);
         PanelMSLayout.setHorizontalGroup(
@@ -70,63 +67,60 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
             .addGroup(PanelMSLayout.createSequentialGroup()
                 .addGroup(PanelMSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelMSLayout.createSequentialGroup()
-                        .addGap(235, 235, 235)
+                        .addGap(183, 183, 183)
                         .addComponent(MainLable))
                     .addGroup(PanelMSLayout.createSequentialGroup()
-                        .addGap(301, 301, 301)
+                        .addGap(231, 231, 231)
                         .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(PanelMSLayout.createSequentialGroup()
                 .addGroup(PanelMSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelMSLayout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(DifficultyDropBox, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addComponent(NoteLable, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelMSLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addGroup(PanelMSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NoteLable2, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NoteLable, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(201, Short.MAX_VALUE))
+                        .addGap(246, 246, 246)
+                        .addComponent(DifficultyDropBox, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         PanelMSLayout.setVerticalGroup(
             PanelMSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMSLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(34, 34, 34)
                 .addComponent(MainLable, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(DifficultyDropBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
-                .addComponent(NoteLable, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(NoteLable2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addComponent(NoteLable, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
                 .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152))
+                .addGap(154, 154, 154))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelMS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelMS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        
+        Difficultyselector df = new Difficultyselector();
+        df.setDifficulty((DifficultyDropBox.getSelectedItem().toString()));
         Sudoku s2 = new Sudoku();
         s2.show();
         
         
         dispose();
-        Difficultyselector df = new Difficultyselector();
-        df.setDifficulty((DifficultyDropBox.getSelectedItem().toString()));
+        
+        
         
     }//GEN-LAST:event_StartButtonActionPerformed
 
@@ -173,7 +167,6 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> DifficultyDropBox;
     private javax.swing.JLabel MainLable;
     private javax.swing.JLabel NoteLable;
-    private javax.swing.JLabel NoteLable2;
     private javax.swing.JPanel PanelMS;
     private javax.swing.JButton StartButton;
     // End of variables declaration//GEN-END:variables
