@@ -67,10 +67,10 @@
         }
     }
     }
-    return correctGrid;
+    return correctGrid;         //returns the grid
     }
     
-    public int RandomGrid(){
+    public int RandomGrid(){        //Chooses random number 1 to 3 for grid selection
         int random = (int) (Math.random()*3)+1;
         return random;
     }

@@ -112,13 +112,13 @@ public class MainPageOfSudoku extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        Difficultyselector df = new Difficultyselector();
-        df.setDifficulty((DifficultyDropBox.getSelectedItem().toString()));
-        Sudoku s2 = new Sudoku();
-        s2.show();
+        Difficultyselector df = new Difficultyselector(); //Uses the class to setr dificulty apropriatly
+        df.setDifficulty((DifficultyDropBox.getSelectedItem().toString())); //Gets the Difficulty as a string to choose the grid patern
+        Sudoku s2 = new Sudoku(); //Creates the second screen
+        s2.show();         //Shows the second screen
         
         
-        dispose();
+        dispose();         //Disposes of the main page
         
         
         

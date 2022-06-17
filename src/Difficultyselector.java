@@ -14,7 +14,7 @@ public class Difficultyselector {
     
     
     public boolean [][] Difficultyselector(){
-        
+        //Easy grid 
         boolean[][] masks1 ={{true, false, true, true, false, true, true, false, false},
                              {true, false, true, true, true, true, false, false, true},
                              {false, true, true, false, true, true, false, false, false},
@@ -24,7 +24,7 @@ public class Difficultyselector {
                              {false, false, false, true, true, false, true, true, false},
                              {true, false, false, true, true, true, true, false, true},
                              {false, false, true, true, false, true, true, false, true}};
-        
+        //Medium grid
         boolean[][] masks2 ={{true, false, true, true, true, true, true, false, true},
                             {false, true, true, true, false, true, true, true, false},
                             {false, true, false, false, true, true, true, true, true},
@@ -34,7 +34,7 @@ public class Difficultyselector {
                             {false, true, false, false, true, true, true, true, true},
                             {false, true, true, true, false, true, true, true, false},
                             {true, false, true, true, true, false, true, false, true}};
-    
+        //Hard grid
         boolean[][] masks3 ={{true, true, false, false, true, false, true, true, true},
                             {true, true, false, true, true, true, true, true, false},
                             {false, true, true, true, true, false, true, false, false},
@@ -45,7 +45,7 @@ public class Difficultyselector {
                             {true, false, true, true, true, true, true, true, true},
                             {true, true, false, false, true, false, true, false, true}};
         
-        
+        //Expert grid
         boolean[][] masks4 ={{true, true, false, true, true, true, false, true, false},
                             {true, false, false, false, true, true, true, true, true},
                             {false, true, true, true, true, true, true, true, true},
@@ -56,7 +56,9 @@ public class Difficultyselector {
                             {true, false, true, true, true, true, true, false, true},
                             {false, true, true, false, false, true, true, true, true}};
         
-        
+        /*
+        Sets the grid to appropriate grid  
+        */
         if ( Dificulty == "Easy"){
         for (int i = 0; i< 9; i++){
             for (int k = 0;k< 9; k++){
@@ -85,15 +87,13 @@ public class Difficultyselector {
                 }
             }    
         }
-    return Difficultyselector;
+    return Difficultyselector; //returnd selected grid
     }
     
-    public String getDifficulty(){
-       return Dificulty;
-    }
+    
     public void setDifficulty(String x){
         
-        Dificulty=x;
+        Dificulty=x;   //Sets the difficulty level
         
     }
 }
