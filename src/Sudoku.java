@@ -86,7 +86,23 @@ public class Sudoku extends javax.swing.JFrame {
                TT[row][col].setText(CorrectAnswer[row][col] + "");
                TT[row][col].setEditable(false);     //makes it uneditable
          }
-             
+            //Making it pretty
+            if (row>=0 && row<=2 && col>=0 && col <=2){
+                TT[row][col].setBorder(BorderFactory.createLineBorder(Color.black,2));
+            }
+            if (row>=0 && row<=2 && col>=6 && col <=8){
+                TT[row][col].setBorder(BorderFactory.createLineBorder(Color.black,2));
+            }
+            if (row>=3 && row<=5 && col>=3 && col <=5){
+                TT[row][col].setBorder(BorderFactory.createLineBorder(Color.black,2));
+            }
+            if (row>=6 && row<=8 && col>=0 && col <=2){
+                TT[row][col].setBorder(BorderFactory.createLineBorder(Color.black,2));
+            }
+            if (row>=6 && row<=8 && col>=6 && col <=8){
+                TT[row][col].setBorder(BorderFactory.createLineBorder(Color.black,2));
+            }
+            
             TT[row][col].setHorizontalAlignment(JTextField.CENTER);     //makes the numbers show up in the midle of text box
             TT[row][col].setFont(FONT_NUMBERS);             //sets the font 
          }
@@ -114,11 +130,16 @@ public class Sudoku extends javax.swing.JFrame {
                       if (TT[row][col].getText().equals(CorrectAnswer[row][col]+"")){       //if the input is correct set text to green and add score 
                           TT[row][col].setForeground(Color.green);
                           score++;
+                          
                       } 
                       else {                                                                //else red
                           TT[row][col].setForeground(Color.red);
                       }
+                      
+                      
+                      
                     }
+                 
                 }
                 
                 if (score == 81){                                                           //If all boxes are correct set to winner screen 
@@ -129,6 +150,7 @@ public class Sudoku extends javax.swing.JFrame {
                     dispose();
                 }
                 score = 0;                                //reset the score 
+                
                 
             }
         });
